@@ -1,0 +1,49 @@
+#############################
+# Commands to run app locally
+#############################
+
+# Open terminal inside <wsgi> folder
+# Run these commands
+	. venv/bin/activate
+	rhc port-forward pe301apitest1
+
+# Let that run and open a new terminal in the same folder
+	. venv/bin/activate
+	export OPENSHIFT_APP_NAME=pe301apitest1
+	export OPENSHIFT_MONGODB_DB_URL=mongodb://admin:Hz3DZdCzjPHw@127.0.0.1/pe301apitest1
+	python run.py
+
+# The last line in the terminal should say something like:
+
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+# Your webapp is now running locally
+# To view it, open a browser and enter 127.0.0.1:5000
+# You should see your page appear
+
+#############################
+# Commands to push app to git
+#############################
+# Open terminal inside <yourAppName> folder
+# Run these commands
+	git add .
+	git commit -m "your message here"
+	git push
+
+# If all went well you should see lots of text scroll by
+# and the last line showing something like
+
+remote: Deployment completed with status: success
+To ssh://12346546543216541326321@pe301apitest1-pe301dev.apps.devcloud.eecs.qmul.ac.uk/~/git/pe301apitest1.git/
+
+# Your page is now running live
+# The link to it can be found in the message above
+# Here it is the following page:
+	pe301apitest1-pe301dev.apps.devcloud.eecs.qmul.ac.uk
+
+########################
+# Other useful commands
+########################
+
+	rhc tail pe301apitest1
+
