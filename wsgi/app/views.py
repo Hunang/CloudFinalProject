@@ -36,6 +36,6 @@ nav.Bar('top', [
 nav.Item('Home', 'index'),
 nav.Item('Emotion App', 'emotion'),
 nav.Item('Vizualisation', 'polynomial'),
-nav.Item('Database collections', 'get_all_databases')
-#nav.Item('Database get personell', 'get_all_personnel')
+nav.Item('Database collections', 'get_all_databases'),
+nav.Item('Database get personell', 'get_collection_methods_and_attributes')
 ])
